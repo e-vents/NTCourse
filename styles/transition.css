@@ -1,0 +1,20 @@
+div {
+  color: darkblue;
+}
+
+.stepBox {
+  padding: 1em;
+  margin: auto;
+  width: 250px;
+  text-align: center;
+  background-color: darkred;
+  transition-property: width, background-color;
+  transition-duration: 1s, 2s;
+  transition-timing-function: ease-in-out, linear;
+}
+
+.stepBox:hover {
+  margin: auto;
+  width: 600px;
+  background-color: darkslateblue;
+}
