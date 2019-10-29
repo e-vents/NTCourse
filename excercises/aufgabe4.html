@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>NT course 2</title>
+  </head>
+  <body>
+
+    <main id="index">
+    </main>
+    <footer>
+    </footer>
+    <script>
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var day = date.getUTCDay();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+
+      document.write("Heute ist der "+day+"."+month+"."+year+"<br>");
+      document.write("Es ist jetzt: "+hours+":"+minutes+":"+seconds+" Uhr<br>");
+      document.write("Anzahl milisekunden")
+    </script>
+  </body>
+</html>
