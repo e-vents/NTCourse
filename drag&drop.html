@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>NT course 2</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+
+      [drappable=true] {
+        cursor: move;
+      }
+
+      #div1, #div2 {
+        float: left;
+        width: 220px;
+        height: 220px;
+        border: 2px solid blue;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      #div2 {
+        border-color: brown;
+        border-style: dotted;
+      }
+
+      img {
+        width: 220px;
+      }
+
+    </style>
+    <script src="scripts/script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h2>technologie course part 2</h2>
+      <a href="#div1" id="button">Go Live</a>
+    </header>
+    <nav>
+      <a href="#">Startseite</a>
+      <a href="ich.html">über mich</a>
+      <a href="projekte.html" target="_blank">Projekte</a>
+      <a href="fotos.html">Fotos</a>
+      <a href="formular.html">Formular</a>
+      <a href="css3.html">CSS3</a>
+      <a href="filter.html">Filter</a>
+      <a href="drag&drop.html">Drag & Drop</a>
+      <a href="transitions.html">Transitions</a>
+      <a href="tictactoe.html">Tic Tac Toe</a>
+      <a href="ajax.html">Ajax</a>
+    </nav>
+    <main id="drag&drop">
+      <h1>Drag & Drop</h1>
+      <p>Wählen sie ein Bild</p>
+
+      <div id="div1" ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+        <img id="drag1" src="resources/bilder/flowers.png" draggable="true" ondragstart="ziehen(event)">
+      </div>
+
+      <div id="div2" ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+
+      </div>
+
+    </main>
+    <footer>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

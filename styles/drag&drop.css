@@ -1,0 +1,21 @@
+[drappable=true] {
+  cursor: move;
+}
+
+#div1, #div2 {
+  float: left;
+  width: 220px;
+  height: 220px;
+  border: 2px solid blue;
+  margin: 20px;
+  padding: 20px;
+}
+
+#div2 {
+  border-color: brown;
+  border-style: dotted;
+}
+
+img {
+  width: 220px;
+}
