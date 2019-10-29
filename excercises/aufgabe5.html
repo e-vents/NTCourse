@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>NT course 2</title>
+  </head>
+  <body>
+    <p font size="4" face="arial"> Bitte geben Sie einen Wert ein!</p>
+    <form action="">
+        <p font size="3" face="arial"> Wert :</p>
+        <input type="text" id="money" size="30">
+        <input type="text" id="interest" size="30">
+        <input type="text" id="years" size="30">
+        <input type="button" value="Berechnen!"  onclick="eingabe(document.forms[0].money.value, 
+                                document.forms[0].interest.value, document.forms[0].years.value)"> 
+        <input type="reset" value="Felder löschen!">
+    </form>
+
+    <h1>Berechnungen</h1>
+  </body>
+    <footer>
+    </footer>
+    <script>
+        //misson 5 & 8
+        function eingabe(value, interest, years) {
+            var Kapital = value;
+            var jZins = Kapital*interest;
+            var ZinsX = jZins*years;
+            alert("Sie legen ein Kapital von FR. "+Kapital+".- bei uns an.\n"+
+                "Sie erhalten einen jählichen Zins von Fr. "+jZins+".-\n"+
+                "In 10 Jahren haben Sie ein Kapital von Fr. "+ZinsX+".-");
+        }
+        //mission 6
+        function square(value) {
+            alert("Das Quadrat von "+value+" ist "+value*value);
+        }
+        //mission 7
+        function charCounter(lines) {
+            alert(lines+"\nDieser Text besteht aus "+lines.length+" Zeichen")
+        }
+    </script>
+  </body>
+</html>
