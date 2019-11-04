@@ -28,29 +28,3 @@ div {
   transition-duration: 3s;
   transition-timing-function: ease-in-out;
 }
-
-#animation div {
-  width: 200px;
-  padding: 10px;
-  margin: auto;
-  float: left;
-}
-
-#circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 110px;
-  background-color: aqua;
-}
-
-#square {
-  width: 200px;
-  height: 200px;
-  background-color: aquamarine;
-}
-
-#picture img {
-  width: 200px;
-  height: 200px;
-  
-}
