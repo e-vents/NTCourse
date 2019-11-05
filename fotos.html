@@ -19,7 +19,7 @@
       <a href="formular.html">Formular</a>
       <a href="css3.html">CSS3</a>
       <a href="filter.html">Filter</a>
-      <a href="drapdrop.html">Drag & Drop</a>
+      <a href="drap&drop.html">Drag & Drop</a>
       <a href="transitions.html">Transitions</a>
       <a href="tictactoe.html">Tic Tac Toe</a>
       <a href="ajax.html">Ajax</a>
@@ -29,18 +29,54 @@
         <h1>Meine Fotos</h1>
         <br>
         <ul>
-          <li><img src="resources/bilder/gallery/1.jpg" class="grow" alt="flowers"></li>
-          <li><img src="resources/bilder/gallery/2.jpg" class="grow" alt="kachel"></li>
-          <li><img src="resources/bilder/gallery/3.jpg" class="grow" alt="t_h"></li>
-          <li><img src="resources/bilder/gallery/4.jpg" class="grow" alt="titel"></li>
-          <li><img src="resources/bilder/gallery/5.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/6.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/7.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/8.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/9.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/10.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/11.jpg" class="grow" alt="van_Gogh"></li>
-          <li><img src="resources/bilder/gallery/12.jpg" class="grow" alt="van_Gogh"></li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild1" src="resources/bilder/gallery/1.jpg" class="grow" alt="flowers" 
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild2" src="resources/bilder/gallery/2.jpg" class="grow" alt="kachel" 
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild3" src="resources/bilder/gallery/3.jpg" class="grow" alt="t_h"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild4" src="resources/bilder/gallery/4.jpg" class="grow" alt="titel"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild5" src="resources/bilder/gallery/5.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild6" src="resources/bilder/gallery/6.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild7" src="resources/bilder/gallery/7.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild8" src="resources/bilder/gallery/8.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild9" src="resources/bilder/gallery/9.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild10" src="resources/bilder/gallery/10.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild11" src="resources/bilder/gallery/11.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
+          <li ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
+            <img id="bild12" src="resources/bilder/gallery/12.jpg" class="grow" alt="van_Gogh"
+            draggable="true" ondragstart="ziehen(event)">
+          </li>
         </ul>
       </div>
     </main>

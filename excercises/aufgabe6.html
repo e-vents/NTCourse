@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>NT course 2</title>
+  </head>
+  <body>
+    <p> Berechnen Sie Ihren Body mass index (BMI)</p>
+    <form action="">
+        <p>Gewicht :</p>
+        <input type="number" name="weight" size="30" required><p> [kg]</p>
+        <p>Grösse :</p>
+        <input type="number" id="height" size="30" required> <p>[m]</p>
+        <input type="button" value="Berechnen!"  onclick="bmi(document.forms[0].weight.value, 
+            document.forms[0].height.value)"> 
+        <input type="reset" value="Felder löschen!">
+        <a><br><br>Ideal ist ein BMI zwischen 20 und 24</a>
+    </form>
+    <h1>Berechnungen</h1>
+  </body>
+    <footer>
+      <nav id="nav">
+          <a onmouseover="hoverEffect(this)" href="index.html">Startseite</a>
+          <a onmouseover="hoverEffect(event)" href="ich.html">über mich</a>
+          <a onmouseover="hoverEffect(event)" href="projekte.html" target="_blank">Projekte</a>
+          <a onmouseover="hoverEffect(event)" href="fotos.html">Fotos</a>
+      </nav>
+      <style>
+        nav {
+          background-color: gray;
+          float: left;
+        }
+        a .hovered {
+          background-color: honeydew;
+        }
+      </style>
+    </footer>
+    <script>
+
+        //paper 2 misson 2
+        function hoverEffect(a) {
+          a.classList.add(".hovered");
+        }
+
+        //paper 2 misson 1
+        function bmi(weight, height) {
+          if (weight="") {
+            alert("nicht leer!");
+          }
+            alert("Ihr Gewicht von "+weight+" kg und Ihre Grösse von "
+            +height+" m ergeben einen BMI von "+(weight/(height*height)));
+        }
+    </script>
+  </body>
+</html>

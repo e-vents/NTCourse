@@ -8,6 +8,8 @@ function ziehen(event) {
 
 function ablegen(event) {
   event.preventDefault();
-  var data = event.dataTransfer.getData("id");
-  event.target.appendChild(document.getElementById(data));
+  var data = event.dataTransfer.getData("id"); //Element, welches gezogen wird
+  var dest = event.target.parentElement;
+  document.getElementById(data).parentElement.appendChild(event.target);
+  dest.appendChild(document.getElementById(data));
 }

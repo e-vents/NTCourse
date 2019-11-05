@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/drag&drop.css">
-    <script src="scripts/script.js"></script>
+    <script>
+      function ablegenErlauben(event) {
+        event.preventDefault();
+      }
+    
+      function ziehen(event) {
+        event.dataTransfer.setData("id", event.target.id);
+      }
+    
+      function ablegen(event) {
+        event.preventDefault(); //unterbinden der Standard-Aktion
+        var data = event.dataTransfer.getData("id"); //speichern der ID des zu ziehenden Objektes
+        event.target.appendChild(document.getElementById(data)); //target: 
+      }
+    </script>
   </head>
   <body>
     <header>
