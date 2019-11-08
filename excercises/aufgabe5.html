@@ -4,14 +4,13 @@
     <title>NT course 2</title>
   </head>
   <body>
-    <p font size="4" face="arial"> Bitte geben Sie einen Wert ein!</p>
+    <p>Bitte geben Sie einen Wert ein!</p>
     <form action="">
-        <p font size="3" face="arial"> Wert :</p>
-        <input type="text" id="money" size="30">
-        <input type="text" id="interest" size="30">
-        <input type="text" id="years" size="30">
-        <input type="button" value="Berechnen!"  onclick="eingabe(document.forms[0].money.value, 
-                                document.forms[0].interest.value, document.forms[0].years.value)"> 
+        <p>Wert:</p>
+        <input type="text" id="betrag" size="30">
+        <input type="text" id="zins" size="30">
+        <input type="text" id="laufzeit" size="30">
+        <input type="button" value="Berechnen!"  onclick="kapitalVerzinsung()"> 
         <input type="reset" value="Felder löschen!">
     </form>
 
@@ -20,23 +19,55 @@
     <footer>
     </footer>
     <script>
-        //misson 5 & 8
-        function eingabe(value, interest, years) {
-            var Kapital = value;
-            var jZins = Kapital*interest;
-            var ZinsX = jZins*years;
-            alert("Sie legen ein Kapital von FR. "+Kapital+".- bei uns an.\n"+
-                "Sie erhalten einen jählichen Zins von Fr. "+jZins+".-\n"+
-                "In 10 Jahren haben Sie ein Kapital von Fr. "+ZinsX+".-");
-        }
-        //mission 6
-        function square(value) {
-            alert("Das Quadrat von "+value+" ist "+value*value);
-        }
-        //mission 7
-        function charCounter(lines) {
-            alert(lines+"\nDieser Text besteht aus "+lines.length+" Zeichen")
-        }
+    //misson 5 & 8
+    function kapitalVerzinsung() {
+	    var betrag = document.forms[0].betrag.value;
+	    var zins = document.forms[0].zins.value;
+	    var laufzeit = document.forms[0].laufzeit.value;
+	    var kapital;
+	
+      if (betrag==""){
+        alert("Bitte den Betrag eingeben");
+        document.verzinsung.betrag.focus();
+        return false;
+      }
+      if (zins==""){
+        alert("Bitte den Zinssatz eingeben");
+        document.verzinsung.zins.focus();
+        return false;
+      }
+      if (laufzeit==""){
+        alert("Bitte die Laufzeit eingeben");
+        document.verzinsung.laufzeit.focus();
+        return false;
+      }    
+      if(isNaN(betrag) || isNaN(zins) || isNaN(laufzeit)){
+        alert("Bitte nur Zahlen eingeben");
+        return false;
+      }
+          
+      kapital = betrag*Math.pow(formatZinsSatz(zins),laufzeit)
+      kapital = Math.round(kapital*1000)/1000;
+      alert(kapital);
+    }
+
+    function formatZinsSatz(zins){
+	    if(zins>=1) {
+		    return 1+zins/100;
+	    } else {	
+		    return 1+zins;
+	    }
+    }
+    
+    //mission 6
+    function square(value) {
+      alert("Das Quadrat von "+value+" ist "+value*value);
+    }
+        
+    //mission 7
+    function charCounter(lines) {
+      alert(lines+"\nDieser Text besteht aus "+lines.length+" Zeichen")
+    }
     </script>
   </body>
 </html>

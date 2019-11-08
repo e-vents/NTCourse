@@ -1,15 +1,15 @@
 function ablegenErlauben(event) {
-  event.preventDefault();
+  event.preventDefault(); //erlaubt drag n drop auf Ebene ListElement
 }
 
 function ziehen(event) {
-  event.dataTransfer.setData("id", event.target.id);
+  event.dataTransfer.setData("id", event.target.id); //speichert die ID des Bildes, welches gezogen wird
 }
 
 function ablegen(event) {
   event.preventDefault();
-  var data = event.dataTransfer.getData("id"); //Element, welches gezogen wird
-  var dest = event.target.parentElement;
-  document.getElementById(data).parentElement.appendChild(event.target);
-  dest.appendChild(document.getElementById(data));
+  var sourceImg = event.dataTransfer.getData("id"); //saves sourceImg
+  var targetLI = event.target.parentElement; //saves targetLI
+  document.getElementById(sourceImg).parentElement.appendChild(event.target); //gets sourceLI  and appends targetImg
+  targetLI.appendChild(document.getElementById(sourceImg)); //
 }

@@ -8,21 +8,21 @@
             Immer wenn die Maus auf einem Menupunkt ist, soll die Hintergrundfarbe wechseln !
             Tipp: Geben Sie den Funktionen Werte mit!
             */ 
-            function angewaehlt(_________) {
-                document.getElementsByTagName('li')[_______].style='_____________'
+            function angewaehlt(childNumber) {
+                document.getElementsByTagName('li')[childNumber].style='background-color: white;'
             }
 
-            function weg() {
-                document.getElementsByTagName('li')[________].style='_____________'
+            function weg(childNumber) {
+                document.getElementsByTagName('li')[childNumber].style='background-color: grey;'
             }
         </script>
     </head>
     <body>
-         <ul style="list-style-type:none;width:100px">
-            <li onmouseover="angewaehlt(________)" onmouseout="weg(________)">Menupunkt 1</li>
-            <li onmouseover="angewaehlt(________)" onmouseout="weg(________)">Menupunkt 2</li>
-            <li onmouseover="angewaehlt(________)" onmouseout="weg(________)">Menupunkt 3</li>
-            <li onmouseover="angewaehlt(________)" onmouseout="weg(________)">Menupunkt 4</li>
+         <ul style="list-style-type: none; width:100px; background-color: grey; text-align: left;">
+            <li onmouseover="angewaehlt(0)" onmouseout="weg(0)">Menupunkt 1</li>
+            <li onmouseover="angewaehlt(1)" onmouseout="weg(1)">Menupunkt 2</li>
+            <li onmouseover="angewaehlt(2)" onmouseout="weg(2)">Menupunkt 3</li>
+            <li onmouseover="angewaehlt(3)" onmouseout="weg(3)">Menupunkt 4</li>
         </ul>
     </body>
 </html>
