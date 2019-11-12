@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>NT course 2</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <style>
+      * {
+        padding: 20px;
+      }
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      table tr td {
+        background-color: cornsilk;
+        height: 20vh;
+        width: 20vw;
+        font-size: 80px;
+        text-align: center;
+      }
+
+      .tdHover {
+        background-color: darkkhaki;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>technologie course part 2</h2>
+      <a href="#qr-code" id="button">Go Live</a>
+    </header>
+    <nav>
+      <a href="#">Startseite</a>
+      <a href="ich.html">über mich</a>
+      <a href="projekte.html" target="_blank">Projekte</a>
+      <a href="fotos.html">Fotos</a>
+      <a href="formular.html">Formular</a>
+      <a href="css3.html">CSS3</a>
+      <a href="filter.html">Filter</a>
+      <a href="drag&drop.html">Drag & Drop</a>
+      <a href="transitions.html">Transitions</a>
+      <a href="tictactoe.html">Tic Tac Toe</a>
+      <a href="ajax.html">Ajax</a>
+    </nav>
+    <main>
+      <p>ich habe alle Mittagessen schon gegessen</p>
+      <p>ich esse sehr gerne Gipfeli am morgen</p>
+      <div class="button" id="growFont">fontsize</div>
+      <div class="button" id="bold">bold</div>
+      <div class="button" id="reset">reset</div>
+
+      <div id="tictactoe">
+        <h3>Tic tac toe</h3>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div class="button" id="resetTic">reset</div>
+      </div>
+
+    </main>
+    <footer>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+
+        $('#growFont').click(function() {
+          var fontSize = parseInt($('p').css('font-size'));
+          fontSize++;
+          $('p').css('font-size', fontSize);
+        });
+
+        $('#bold').mouseenter(function() {
+          $('p:odd').addClass('bold');
+        });
+
+        $('#bold').mouseleave(function() {
+          $('p:odd').removeClass('bold');
+        });
+
+        $('#reset').click(function() {
+          $('p').css('font-size', 16);
+          $('p').css('color', 'black');
+        });
+
+        $('p').dblclick(function() {
+          $(this).css('color', 'blue');
+        });
+
+        $('table tr td').mouseenter(function() {
+          $(this).addClass('tdHover');
+        });
+
+        $('table tr td').mouseleave(function() {
+          $(this).removeClass('tdHover');
+        });
+
+        $('table tr td').click(function() {
+          if ($(this).text() == '') {
+            $(this).text('X');
+          }
+          setTimeout(() => {
+            if ($(this).closest('td').next().text() == '') {
+              if ($(this).parent().children('tr').last() != this) {
+                $(this).closest('td').next().text('O');
+              } else {
+                alert('cope')
+                $('table').closest('tr').next().children().first().text('O');
+              }
+            } else {
+              /*
+              $(this).closest('td').next().text('O');
+              */
+            }
+          }, 500);
+        });
+
+        $('#resetTic').click(function() {
+          $('table tr td').each(() => {
+            $('table tr td').text('');
+          })
+        });
+      });
+    </script>
+  </body>
+</html>
