@@ -5,21 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/drag&drop.css">
-    <script>
-      function ablegenErlauben(event) {
-        event.preventDefault();
-      }
-    
-      function ziehen(event) {
-        event.dataTransfer.setData("id", event.target.id);
-      }
-    
-      function ablegen(event) {
-        event.preventDefault(); //unterbinden der Standard-Aktion
-        var data = event.dataTransfer.getData("id"); //speichern der ID des zu ziehenden Objektes
-        event.target.appendChild(document.getElementById(data)); //target: 
-      }
-    </script>
+    <script src="scripts/drag&drop.js"></script>
   </head>
   <body>
     <header>
@@ -43,13 +29,15 @@
       <h1>Drag & Drop</h1>
       <p>Wählen sie ein Bild</p>
 
-      <div id="div1" ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
-        <img id="drag1" src="resources/bilder/flowers.png" draggable="true" ondragstart="ziehen(event)">
+      <!--ondrop: event occurs when the dragged element is dropped on the drop target
+        ondragover: event occurs when the dragged element is over the drop target-->
+      <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <!--id needed because of the JS-Selection by ID, draggable="true" is omittable
+        ondragstart: event occurs when the user starts to drag an element-->
+        <img id="drag1" src="resources/bilder/flowers.png" ondragstart="drag(event)">
       </div>
-
-      <div id="div2" ondrop="ablegen(event)" ondragover="ablegenErlauben(event)">
-
-      </div>
+      <!--same div as above-->
+      <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
     </main>
     <footer>
@@ -58,7 +46,6 @@
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
-
           document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
           });
